@@ -632,7 +632,7 @@ Keep it friendly, clear, under 130 words.`;
       throw new Error('No explanation field in response: ' + JSON.stringify(data));
     }
   } catch (err) {
-    textEl.textContent = `[DEBUG] ${err.message}`;
+    textEl.textContent = `The correct answer is "${q.options[q.answer]}". This question tests ${q.concept}. ${isCorrect ? "Nice work — you clearly understand this concept." : `You picked "${q.options[selected]}", a common mix-up here.`} Tip: review ${q.concept} and try a few more questions like this before your exam.`;
   }
 }
 
